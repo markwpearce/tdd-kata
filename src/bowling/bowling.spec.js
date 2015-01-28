@@ -13,6 +13,10 @@ describe('bowling', function () {
     expect(isNumber(b.score([]))).toBe(true);
   });
 
+  it('should return error (-1) if array has more than ten values', function(){
+    var score = b.score([1,1,1,1,1,1,1,1,1,1,1]);
+    expect(score).toBe(-1);
+  });
 
 
 
