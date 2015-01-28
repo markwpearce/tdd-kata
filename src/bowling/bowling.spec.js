@@ -67,5 +67,9 @@ describe('bowling', function () {
     expect(b.score([ [5,5], [3, 0, 0]])).toBe(16)
   });
 
+  it('should score a strike than [4, 4] as 26 (8+18)', function() {
+    expect(b.score([ [10], [4, 4, 0]])).toBe(26)
+  });
+
 
 });
