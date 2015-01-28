@@ -15,7 +15,14 @@ Bowling = {
       if(frames[i].length > perFrame) return ERROR;
     }
 
-    return 0;
+    var score = 0;
+    for(var frame = 0; frame < frames.length; frame++) {
+      for(var shot = 0; shot < frames[frame].length; shot++) {
+        score += frames[frame][shot];
+      }
+    }
+
+    return score;
 
   }
 
