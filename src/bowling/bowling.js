@@ -18,16 +18,19 @@ Bowling = {
     var score = 0;
     var lastFrame = false;
     for(var frame = 0; frame < frames.length; frame++) {
-      lastFrame = frame+1 == frame.length;
+      lastFrame = (frame == 9);
       for(var shot = 0; shot < frames[frame].length; shot++) {
         if(shot == 0) {//first shot
-          if(frames[frame][0] == 10 && !lastFrame) {
-            score += frames[frame+1][0];
-            score += frames[frame+1][1];
+          if(!lastFrame) {
+            if(frames[frame][0] == 10) {
+              score += frames[frame+1][0];
+              score += frames[frame+1][1];
+            }
+            else if(frames[frame][0]+ frames[frame][1]== 10) {
+              score += frames[frame+1][0];
+            }
           }
-          else if(frames[frame][0]+ frames[frame][1]== 10 && !lastFrame) {
-            score += frames[frame+1][0];
-          }
+
         }
 
         score += frames[frame][shot];

@@ -72,4 +72,12 @@ describe('bowling', function () {
   });
 
 
+  it('should score a 10th frame of [5, 5, 3] as 13', function() {
+    expect(b.score([ [], [], [], [], [], [], [], [], [], [5, 5, 3]])).toBe(13)
+  });
+
+  it('should score a 10th frame of [10, 10, 10] as 30', function() {
+    expect(b.score([ [], [], [], [], [], [], [], [], [], [10, 10, 10]])).toBe(30)
+  });
+
 });
