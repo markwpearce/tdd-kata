@@ -7,7 +7,7 @@ Bowling = {
     var perFrame = SHOTS_PER_FRAME;
     if(typeof frames.length === 'undefined')
       return ERROR;
-    if(frames.length > 10)
+    if(frames.length != 10)
       return ERROR;
 
     for(var i = 0; i < frames.length; i++) {
@@ -24,15 +24,16 @@ Bowling = {
           if(!lastFrame) {
             if(frames[frame][0] == 10) {
               score += frames[frame+1][0];
-              score += frames[frame+1][1];
+              if(frames[frame+1][0] == 10 && frame < 8)
+                score += frames[frame+2][0]
+              else
+                score += frames[frame+1][1];
             }
             else if(frames[frame][0]+ frames[frame][1]== 10) {
               score += frames[frame+1][0];
             }
           }
-
         }
-
         score += frames[frame][shot];
       }
     }

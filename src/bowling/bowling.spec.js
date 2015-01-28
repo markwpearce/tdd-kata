@@ -44,7 +44,7 @@ describe('bowling', function () {
   });
 
 
-  it('should return error (-1) if array has more than ten values', function(){
+  it('should return error (-1) if array doesnt have ten values', function(){
     var score = b.score([1,1,1,1,1,1,1,1,1,1,1]);
     expect(score).toBe(-1);
   });
@@ -64,11 +64,11 @@ describe('bowling', function () {
   });
 
   it('should score a spare than 3 as 16', function() {
-    expect(b.score([ [5,5], [3, 0, 0]])).toBe(16)
+    expect(b.score([ [5,5], [3, 0, 0], [], [], [], [], [], [], [], []])).toBe(16)
   });
 
   it('should score a strike than [4, 4] as 26 (8+18)', function() {
-    expect(b.score([ [10], [4, 4, 0]])).toBe(26)
+    expect(b.score([ [10], [4, 4, 0], [], [], [], [], [], [], [], []])).toBe(26)
   });
 
 
@@ -78,6 +78,11 @@ describe('bowling', function () {
 
   it('should score a 10th frame of [10, 10, 10] as 30', function() {
     expect(b.score([ [], [], [], [], [], [], [], [], [], [10, 10, 10]])).toBe(30)
+  });
+
+  it('should score a perfect game as 300', function() {
+    expect(b.score([
+      [10], [10], [10], [10], [10], [10], [10], [10], [10], [10, 10, 10]])).toBe(300)
   });
 
 });
