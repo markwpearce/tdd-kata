@@ -63,4 +63,9 @@ describe('bowling', function () {
     expect(b.score(noSpecials0)).toBe(0);
   });
 
+  it('should score a spare than 3 as 16', function() {
+    expect(b.score([ [5,5], [3, 0, 0]])).toBe(16)
+  });
+
+
 });
