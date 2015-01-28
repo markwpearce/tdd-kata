@@ -10,13 +10,7 @@ module.exports = function(karma) {
     frameworks: [ 'jasmine'],
 
     files: [
-
-      { pattern: "src/**/*.js",
-        watched: true,
-        included: true,
-        served: true
-      }
-      "test/**/*.spec.js"
+      "src/**/*.js"
     ],
 
     reporters: [ 'spec',  'coverage'],
@@ -27,11 +21,7 @@ module.exports = function(karma) {
 
     coverageReporter: {
       reporters: [
-        { type: 'html', dir: 'reports/test/unit/coverage' },
-        { type: 'lcovonly', dir: 'reports/test/unit/coverage' },
-        { type: 'json', dir: 'reports/test/unit/coverage' },
-        { type: 'cobertura', dir: 'reports/test/unit/coverage' },
-        {type: 'text-summary', dir: 'reports/coverage/' }
+          {type: 'text-summary', dir: 'reports/coverage/' }
       ]
     }
 
