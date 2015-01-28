@@ -1,10 +1,21 @@
 {
   "name": "tdd-kata",
   "version": "1.0.0",
-  "description": "",
+  "description": "TDD Katas",
+  "main": "gulpfile.js"
   "dependencies": {
     "gulp": "^3.8.10"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markwpearce/tdd-kata.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/markwpearce/tdd-kata/issues"
+  },
+  "homepage": "https://github.com/markwpearce/tdd-kata",
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-jshint": "^1.9.0",
