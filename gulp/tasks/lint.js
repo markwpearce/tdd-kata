@@ -7,13 +7,4 @@ gulp.task('lint', function() {
   return gulp.src(config.src)
     .pipe(jshint())
     .pipe(jshint.reporter(config.reporter))
-    .pipe(jshint.reporter('fail'))
-    .on('error', function(e){
-        error = true;
-    })
-    .on('end', function(){
-        if(error) {
-            process.exit();
-        }
-    });
 });
